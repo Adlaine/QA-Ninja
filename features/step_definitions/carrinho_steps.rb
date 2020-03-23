@@ -15,7 +15,7 @@ end
   
 Então("deve ser adicionado {int} unidade\\(s) deste item") do |quantidade|
     cart = find('#cart')
-    expect(cart).to have_text "(#{quantidade}x) #{@produto_nome}"
+    expect(cart).to have_text "(#{quantidade}x) #{@produto_nome}" # interpolação de string para validar o produto no carrinh
 end
   
 Então("o valor total deve ser de {string}") do |valor_total|
@@ -23,20 +23,56 @@ Então("o valor total deve ser de {string}") do |valor_total|
     total = find("tr", text: 'Total:').find("td")
     puts total.text 
     expect(total.text).to eql valor_total
-    sleep 5
 end
 
 #Lista de produtos
 
 Dado("que o produto desejado são:") do |table|                                
-    @product_list = table.hashes
-    puts @product_list
+    @product_list = table.hashes #coverteu a tabela para um array com todos os produtos
 end                                                                           
                                                                                 
 Quando("eu adiciono todos os itens no carrinho") do                           
-    pending # Write code here that turns the phrase above into concrete actions 
+    @product_list.each do |p| 
+        p["quantidade"].to_i.times do
+            find(".menu-item-info-box", text: p["nome"].upcase).find(".add-to-cart").click
+        end
+    end
 end                                                                           
                                                                                 
 Então("vejo todo os itens no carrinho") do                                    
-    pending # Write code here that turns the phrase above into concrete actions 
-end                                                                           
+    cart = find("#cart")
+    @product_list.each do |p|
+        expect(cart).to have_text "(#{p["quantidade"]}x) #{p["nome"]}"
+    end
+end      
+
+# Remover itens do carrinho
+
+Dado("que eu tenho os seguintes itens no carrinho") do |table|
+    @product_list = table.hashes
+    #recurso que chama um step do bdd (adicionar.feature) dynamics steps
+    steps %{ 
+        Quando eu adiciono todos os itens no carrinho
+    }
+end
+
+Quando("eu removo somente o {int}") do |item|
+    cart = find("#cart")
+    cart.all("table tbody tr")[item].find(".danger").click    
+end
+
+Quando("eu removo todos os itens") do
+    @product_list.each_with_index do |value, idx|
+        cart = find("#cart")
+        cart.all("table tbody tr")[idx].find(".danger").click  
+    end
+end
+
+Quando("eu limpo o meu carrinho") do
+    click_button "Limpar"
+end
+  
+Então("vejo a seguinte mensagem no carrinho {string}") do |mensagem|
+    cart = find("#cart")
+    expect(cart).to have_text mensagem
+end
