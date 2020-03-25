@@ -1,4 +1,5 @@
 #language: pt
+@cardapio
 
 Funcionalidade: Cardápio
 Para que eu possa decidir o que eu possa comer

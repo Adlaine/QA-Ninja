@@ -1,5 +1,5 @@
 #language: pt
-@temp
+
 @bread_bakery
 Funcionalidade: Adicionar ao carrinho
 Para que eu possa finalizar uma compra
@@ -25,12 +25,12 @@ Posso adicionar itens ao meu carrinho
     Cenário: Adicionar varios itens
         Dado que o produto desejado são:
         |nome                  |preco   |quantidade |
-        |Cup Cake              |R$ 8,70 |10         |
-        |Donut                 |R$ 2,50 |5          |
-        |Pão Artesanal Italiano|R$ 15,09|7          |  
+        |Cup Cake              |R$ 8,70 |1          |
+        |Donut                 |R$ 2,50 |1          |
+        |Pão Artesanal Italiano|R$ 15,90|1          |  
         Quando eu adiciono todos os itens no carrinho
         Então vejo todo os itens no carrinho
-        E o valor total deve ser de "R$ 210,80"
+        E o valor total deve ser de "R$ 27,10"
         
 
     

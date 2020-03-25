@@ -1,5 +1,4 @@
 #language: pt
-
 @bread_bakery
 Funcionalidade: Remover do carrinho
 Para que eu possa manter o meu carrinho apenas com produtos desejados
@@ -12,6 +11,7 @@ Contexto: itens no carrinho
         |Cup Cake              |R$ 8,70 | 1         | 
         |Donut                 |R$ 2,50 | 1         |
         |Pão Artesanal Italiano|R$ 15,90| 1         |
+        
 
 Esquema do Cenário: Remover 1 item 
     Quando eu removo somente o <item>
@@ -22,7 +22,7 @@ Esquema do Cenário: Remover 1 item
     | 0   | "R$ 18,40" |
     | 1   | "R$ 24,60" |
     | 2   | "R$ 11,20" |
-
+@temp
 Cenário: Remover todos os itens 
     Quando eu removo todos os itens
     Então vejo a seguinte mensagem no carrinho "Seu carrinho está vazio!"
