@@ -1,5 +1,5 @@
 #language: pt
-@cardapio
+@cardapio @regressivo
 
 Funcionalidade: Cardápio
 Para que eu possa decidir o que eu possa comer

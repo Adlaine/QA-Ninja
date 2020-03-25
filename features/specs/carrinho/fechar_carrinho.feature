@@ -1,6 +1,6 @@
 #language:pt
 
-@green_food
+@green_food @regressivo
 Funcionalidade: Fechar carrinho
 Para que eu possa ter certeza de que vou receber e pagar tudo certinho
 sendo um ususario que adicionou itens
@@ -15,4 +15,4 @@ Posso fechar o meu carrinho
         Quando eu fecho o meu carrinho
         Então o valor total de itens de ser igual a "R$ 35,90"
         E o valor do frete deve ser igual a "R$ 8,00"
-        E o valor total da compra deve ser igual a R$ "41,90"
+        E o valor total da compra deve ser igual a "R$ 43,90"

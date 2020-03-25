@@ -1,5 +1,5 @@
 #language: pt
-
+@regressivo
 Funcionalidade: Informações adicionais
     Para que eu possa ver as informações adicionais
     Sendo um usuario que escolheu um restaurante

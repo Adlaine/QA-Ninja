@@ -1,6 +1,6 @@
 #language: pt
 
-@bread_bakery
+@bread_bakery @regressivo
 Funcionalidade: Adicionar ao carrinho
 Para que eu possa finalizar uma compra
 Sendo um cliente que já decidiu o que deseja comer

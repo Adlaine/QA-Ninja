@@ -1,5 +1,5 @@
 #language: pt
-@bread_bakery
+@bread_bakery @regressivo
 Funcionalidade: Remover do carrinho
 Para que eu possa manter o meu carrinho apenas com produtos desejados
 Sendo um cliente que desistiu de um ou mais produtos

@@ -1,5 +1,5 @@
 #language: pt
-
+@regressivo
 Funcionalidade: Restaurantes    
     Para que eu possa saber quais os restaurantes disponíveis com o tempo de entrega e nota de avaliação
     Sendo um usuário que deseja pedir comida
